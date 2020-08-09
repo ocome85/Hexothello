@@ -4,6 +4,7 @@ ScriptsOnlyBuild:
     - Othello
     - OthelloStone
     - OthelloUI
+    - title
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
@@ -15,9 +16,14 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.EventTrigger
     - UnityEngine.EventSystems.PhysicsRaycaster
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
+    - UnityEngine.UI.Image
+    - UnityEngine.UI.InputField
+    - UnityEngine.UI.RawImage
     - UnityEngine.UI.Text
+    - UnityEngine.UI.Toggle
   sceneClasses:
     Assets/Scenes/Fieldset.unity:
     - Class: 1
@@ -55,11 +61,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11902}
     - Class: 114
+      Script: {instanceID: 11942}
+    - Class: 114
       Script: {instanceID: 12080}
     - Class: 114
       Script: {instanceID: 12376}
     - Class: 114
       Script: {instanceID: 12518}
+    - Class: 114
+      Script: {instanceID: 12834}
     - Class: 114
       Script: {instanceID: 12968}
     - Class: 114
@@ -67,9 +77,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13604}
     - Class: 114
-      Script: {instanceID: 13710}
+      Script: {instanceID: 13712}
     - Class: 114
-      Script: {instanceID: 13756}
+      Script: {instanceID: 13758}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -77,6 +87,65 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/Title.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11724}
+    - Class: 114
+      Script: {instanceID: 11902}
+    - Class: 114
+      Script: {instanceID: 11942}
+    - Class: 114
+      Script: {instanceID: 12376}
+    - Class: 114
+      Script: {instanceID: 12834}
+    - Class: 114
+      Script: {instanceID: 12862}
+    - Class: 114
+      Script: {instanceID: 13050}
+    - Class: 114
+      Script: {instanceID: 13372}
+    - Class: 114
+      Script: {instanceID: 13614}
+    - Class: 114
+      Script: {instanceID: 13758}
+    - Class: 114
+      Script: {instanceID: 13776}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
       Script: {instanceID: 0}
     - Class: 222
       Script: {instanceID: 0}
@@ -279,7 +348,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: fa2aaa5402e8fea65dfef431784d4fa7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: OthelloStone
@@ -339,7 +408,7 @@ ScriptsOnlyBuild:
     className: VerticalLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: d40fb311f61fbef33807687a6bd16a6a
+      Hash: d9e683e94dc1ddaf4c69f11db0a6396c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: OthelloUI
@@ -429,10 +498,16 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
-      Hash: 7df2a593ba01746341606ac2d163ea5f
+      Hash: 293737244a971b2baf110b4207c9393a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Othello
+  - hash:
+      serializedVersion: 2
+      Hash: 5abb9b0c6d0ec1a6989ef51b0a4031ed
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: title
   - hash:
       serializedVersion: 2
       Hash: a01d7cd1372d550f912f7121e6ebe739
@@ -531,5 +606,6 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 13
   scenePathNames:
+  - Assets/Scenes/Title.unity
   - Assets/Scenes/Fieldset.unity
   playerPath: A:/apk/othello.apk

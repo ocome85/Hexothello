@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 
 
 public class Othello : MonoBehaviour
@@ -15,7 +15,7 @@ public class Othello : MonoBehaviour
     public GameObject Turn;
 
     //生成フィールドの長さ
-    public int stagelength ;
+    //public int stagelength ;
     
     public GameObject EmptyHex;
     GameObject TargetHex;
@@ -26,9 +26,16 @@ public class Othello : MonoBehaviour
     bool chk;
 
     string Hexname;
+    public Text ji ;
+    int stagelength;
+    int kaisuu;
+    GameObject Turnre;
+    GameObject Turnree;
     // Start is called before the first frame update
     void Start()
     {
+        
+        stagelength=title.leng;
         //Instantiate (Black, new Vector3 (0f, 0, 3.468f), Quaternion.identity);
         for (int y=1; y<= stagelength;)
         {
@@ -88,12 +95,64 @@ public class Othello : MonoBehaviour
         Debug.Log("クリックされました");
         OthelloStone.StoneChange(White,Black,EmptyHex,Turn,stagelength); 
         OthelloUI.Scorecount();
-
+        Invoke("DelayMethod", 0.1f);
+    }
+    void DelayMethod()
+    {
+        if( Turn ==Black)
+        {
+            Turnre =White;
+        }
+        else
+        {
+            Turnre =Black;
+        }
+        kaisuu =0;
+        OthelloStone.changechk(Turnre,stagelength,kaisuu);
     }
 
+    public void Turnchange1()
+    {
+        if(Turn == Black)
+        {
+            Turn=White;
+        }
+        else
+        {
+            Turn=Black;
+        }
+    }
+        
+    public void Turnchange()
+    {
+        if(Turn == Black)
+        {
+            Turn=White;
+            Turnree=Black;
+        }
+        else
+        {
+            Turn=Black;
+            Turnree=White;
+        }
+        kaisuu =1;
+        Debug.Log("到達");
+        Invoke("DelayMethod1", 0.1f);
+        
+    }
+    void DelayMethod1()
+    {
+    OthelloStone.changechk(Turnree,stagelength,kaisuu);
+    }
+
+    public void gotitle()
+    {
+    SceneManager.LoadScene("title");
+    }
     // Update is called once per frame
     void Update()
     {
-        
+        OthelloUI.Scorecount();
+
     }
 }
