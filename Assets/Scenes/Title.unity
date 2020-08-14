@@ -1108,7 +1108,7 @@ MonoBehaviour:
     m_FontStyle: 2
     m_BestFit: 1
     m_MinSize: 5
-    m_MaxSize: 50
+    m_MaxSize: 150
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 0
@@ -1901,7 +1901,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "2~98\n(\rEven number)"
+  m_Text: "2~30\n(\rEven number)"
 --- !u!222 &1912106379
 CanvasRenderer:
   m_ObjectHideFlags: 0

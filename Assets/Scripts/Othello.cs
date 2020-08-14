@@ -80,7 +80,7 @@ public class Othello : MonoBehaviour
                 }
                 y ++;
 
-            OthelloUI.Scorecount();
+            OthelloUI.Scorecount(Turn);
         }
         /*
         Instantiate (Black, new Vector3 (4f, 0, 3.468f), Quaternion.identity);
@@ -94,8 +94,8 @@ public class Othello : MonoBehaviour
     {
         Debug.Log("クリックされました");
         OthelloStone.StoneChange(White,Black,EmptyHex,Turn,stagelength); 
-        OthelloUI.Scorecount();
-        Invoke("DelayMethod", 0.1f);
+        OthelloUI.Scorecount(Turn);
+        Invoke("DelayMethod", 0.01f);
     }
     void DelayMethod()
     {
@@ -137,7 +137,7 @@ public class Othello : MonoBehaviour
         }
         kaisuu =1;
         Debug.Log("到達");
-        Invoke("DelayMethod1", 0.1f);
+        Invoke("DelayMethod1", 0.01f);
         
     }
     void DelayMethod1()
@@ -152,7 +152,7 @@ public class Othello : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        OthelloUI.Scorecount();
+        OthelloUI.Scorecount(Turn);
 
     }
 }

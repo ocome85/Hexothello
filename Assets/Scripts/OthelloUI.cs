@@ -13,15 +13,25 @@ public class OthelloUI : MonoBehaviour
     public GameObject EndTextobj;
     public GameObject Endbtnobj;
     public GameObject Endpanel;
+    string Turnname;
 
     // Start is called before the first frame update
-    public void Scorecount()
+    public void Scorecount(GameObject Turn)
     {
         //各マスの数をカウント
         EmpScore= GameObject.FindGameObjectsWithTag("EmptyHex");
         BlkScore= GameObject.FindGameObjectsWithTag("BlackScore");
         WhtScore= GameObject.FindGameObjectsWithTag("WhiteScore");
-        Score.text = ("Remaining trout :"+ (EmpScore.Length -1) + "\nBlack Score :" +( BlkScore.Length-1) + "\nWhite Score :" + (WhtScore.Length-1));
+        if (Turn.tag == "WhiteScore")
+        {
+             Turnname ="White";
+        }
+        else 
+        {
+            Turnname="Black";
+        }
+
+        Score.text = ("Remaining trout :"+ (EmpScore.Length -1) + "\nBlack Score :" +( BlkScore.Length-1) + "\nWhite Score :" + (WhtScore.Length-1)+"\nTurn :" +Turnname);
         
         if (EmpScore.Length-1 ==0)
         {

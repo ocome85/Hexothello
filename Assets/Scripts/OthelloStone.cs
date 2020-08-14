@@ -12,6 +12,7 @@ public Othello Othello;
 int turnchk ;
 int changeok=0;
 int changeokk=0;
+int chk1 ;
 GameObject clickedGameObject;
     // Start is called before the first frame update
     void Start()
@@ -484,8 +485,9 @@ GameObject clickedGameObject;
         changeokk =0;
         GameObject[] Emp;
         Emp= GameObject.FindGameObjectsWithTag("EmptyHex");
-        for (int yy =1;Emp.Length >yy;)
-        {    
+        for (int yy =1;Emp.Length >yy;) 
+        {
+        chk1++;
         Vector3 tmp = Emp[yy].transform.position;
             //Debug.Log(tmp);
         string clicktag  =Emp[yy].tag;
@@ -514,8 +516,10 @@ GameObject clickedGameObject;
             // 上下を返せるかの判定
             //上方向の処理　y軸の元の値を変えない為 up** とする
             int upstrValue1I = strValue1I;
+            chk1 =0;
             for (int y=2; y<= upstrValue1I;)
             {
+                chk1 ++;
                 upstrValue1I --;
                 GameObject chkhex= GameObject.Find("HexY" + strValueI + "X" + upstrValue1I);
                 string chkhexst= ("HexY" + strValueI + "X" + upstrValue1I);
@@ -530,8 +534,12 @@ GameObject clickedGameObject;
                     {
                         if (changeok ==1)
                         {
-                            Debug.Log(Emp[yy].name+"ue");
+                            Debug.Log(Emp[yy].name+"ue"+kaisuu);
                             changeokk =1;
+                        }
+                        if(chk1 ==1)
+                        {
+                            break;
                         }
                     }
                     //違う場合
@@ -550,9 +558,11 @@ GameObject clickedGameObject;
             list.Clear();
             listpos.Clear();
             changeok =0;
+            chk1 =0;
             int dwstrValue1I = strValue1I;
             for (int y=stagelength-1; y>= dwstrValue1I;)
             {
+                chk1++;
                 dwstrValue1I ++;
                 GameObject chkhex= GameObject.Find("HexY" + strValueI + "X" + dwstrValue1I);
                 string chkhexst= ("HexY" + strValueI + "X" + dwstrValue1I);
@@ -568,8 +578,12 @@ GameObject clickedGameObject;
                     {
                         if (changeok ==2)
                         {
-                            Debug.Log(Emp[yy].name+"sita");
+                            Debug.Log(Emp[yy].name+"sita"+kaisuu);
                             changeokk =1;
+                        }
+                        if(chk1 ==1)
+                        {
+                            break;
                         }
                     }
                     //違う場合
@@ -588,10 +602,12 @@ GameObject clickedGameObject;
             list.Clear();
             listpos.Clear();
             changeok =0;
+            chk1=0;
             int rdstrValue1I = strValue1I; //y
             int rdstrValueI = strValueI;  //x
             for (int y=stagelength; y>= rdstrValue1I && y>= rdstrValueI;)
             {
+                chk1++;
                 rdstrValueI ++ ;
                 if (rdstrValueI % 2 ==0)
                 {
@@ -620,8 +636,12 @@ GameObject clickedGameObject;
                     {
                         if (changeok ==3)
                         {
-                            Debug.Log(Emp[yy].name+"migisita");
+                            Debug.Log(Emp[yy].name+"migisita"+kaisuu);
                             changeokk =1;
+                        }
+                        if(chk1 ==1)
+                        {
+                            break;
                         }
                     }
                     //違う場合
@@ -639,10 +659,12 @@ GameObject clickedGameObject;
         list.Clear();
         listpos.Clear();
         changeok =0;
+        chk1=0;
         int rustrValue1I = strValue1I; //y
         int rustrValueI = strValueI;  //x
         for (int y=stagelength; 2<= rustrValue1I && y>= rustrValueI;)
             {
+                chk1++;
                 rustrValueI ++ ;
                 if (rustrValueI % 2 !=0)
                 {
@@ -671,8 +693,12 @@ GameObject clickedGameObject;
                     {
                         if (changeok ==4)
                         {
-                            Debug.Log(Emp[yy].name+"migiue");
+                            Debug.Log(Emp[yy].name+"migiue" +kaisuu);
                             changeokk =1;
+                        }
+                        if(chk1 ==1)
+                        {
+                            break;
                         }
                     }
                     //違う場合
@@ -690,10 +716,12 @@ GameObject clickedGameObject;
         list.Clear();
         listpos.Clear();
         changeok =0;
+        chk1=0;
         int lustrValue1I = strValue1I; //y
         int lustrValueI = strValueI;  //x
         for (;2<= lustrValue1I && 2<= lustrValueI;)
             {
+                chk1++;
                 lustrValueI -- ;
                 if (lustrValueI % 2 !=0)
                 {
@@ -722,8 +750,12 @@ GameObject clickedGameObject;
                     {
                         if (changeok ==5)
                         {
-                            Debug.Log(Emp[yy].name+"hidariue");
+                            Debug.Log(Emp[yy].name+"hidariue"+kaisuu);
                             changeokk =1;
+                        }
+                        if(chk1 ==1)
+                        {
+                            break;
                         }
                     }
                     //違う場合
@@ -742,11 +774,12 @@ GameObject clickedGameObject;
         list.Clear();
         listpos.Clear();
         changeok =0;
-
+        chk1=0;
         int ldstrValue1I = strValue1I; //y
         int ldstrValueI = strValueI;  //x
         for (int y=stagelength; 1<= ldstrValue1I && y>= ldstrValueI;)
             {
+                chk1++;
                 ldstrValueI -- ;
                 if (ldstrValueI % 2 ==0)                {
                     ldstrValue1I ++;
@@ -774,8 +807,12 @@ GameObject clickedGameObject;
                     {
                         if (changeok ==6)
                         {
-                            Debug.Log(Emp[yy].name+"hidarisita");
+                            Debug.Log(Emp[yy].name+"hidarisita"+kaisuu);
                             changeokk =1;
+                        }
+                        if(chk1 ==1)
+                        {
+                            break;
                         }
                     }
                     //違う場合

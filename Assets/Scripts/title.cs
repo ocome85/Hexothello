@@ -19,8 +19,12 @@ public class title : MonoBehaviour
     public void gofield()
     {
     leng=int.Parse(length1.text);
-    DontDestroyOnLoad (this);
-    SceneManager.LoadScene("Fieldset");
+    if(leng>3 && leng<31 && leng %2 ==0)
+    {
+        DontDestroyOnLoad (this);
+        SceneManager.LoadScene("Fieldset");
+    }
+
     }
 
     // Update is called once per frame
